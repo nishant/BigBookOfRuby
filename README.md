@@ -1,2 +1,2 @@
 # RubySnippets
-random useful code
+random useful Ruby code
