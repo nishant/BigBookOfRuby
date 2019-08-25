@@ -1,8 +1,3 @@
-<style type='text/css'>
-.highlight pre{
-  white-space: pre-wrap;
-}
-</style>
 # Ruby Code Snippets
 
 ### Character Counting Hash
