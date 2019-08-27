@@ -7,7 +7,7 @@
 * [Ruby Project Structure](#ruby-project-structure)
 * [Reading from a File](#reading-from-a-file)
 * [Writing to a File](#writing-to-a-file)
-
+* [Require Multiple Files in a Directory](#require-multiple-files-in-a-directory)
 
 ### Character Counting Hash
 ```ruby
@@ -129,3 +129,8 @@ Append to an Existing File:
 File.write('/path/to/file', 'some content', mode: 'a')
 ```
 
+#
+### Require Multiple Files in a Directory
+```ruby
+Dir.glob('lib/*.rb') { |f| require_relative f }
+```
