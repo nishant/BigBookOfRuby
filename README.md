@@ -75,13 +75,13 @@ Hash[letters.zip(numbers)]
 #
 ### Ruby Project Structure
 * app/
-	* gems/                 # External Libraries
+	* gems/                 `# External Libraries`
 		* Gemfile
 		* Gemfile.lock
-  	* lib/					# Program Files
-	* tests/   				# Test Files
+  	* lib/					`# Program Files`
+	* tests/   				`# Test Files`
   	* README
-	* appname.rb            # Driver 
+	* appname.rb            `# Driver` 
 
 #
 ### Reading From A File
