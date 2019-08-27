@@ -1,7 +1,13 @@
 # Ruby Code Snippets
+* [Character Counting Hash](#character-counting-hash)
+* [Get JSON data via API](#get-json-data-via-api)
+* [Get Top K Frequent Elements](#get-top-k-frequent-elements)
+* [Convert Arrays to a Hash](#convert-arrays-to-a-hash)
+* [Map of Letters to Numbers](#map-of-letters-to-numbers)
+* [Ruby Project Structure](#ruby-project-structure)
+* [Reading from a File](#reading-from-a-file)
+* [Writing to a File](#writing-to-a-file)
 
-## Finder
-* [Character Counting Hash](#get-top-k-frequent-elements)
 
 ### Character Counting Hash
 ```ruby
@@ -51,7 +57,7 @@ top_k_frequent(nums, k)
 ```
 
 #
-### Convert 2 Arrays to a Hash
+### Convert Arrays to a Hash
 ```ruby
 keys = ["a", "b", "c"]
 values = [1, 2, 3]
@@ -75,16 +81,16 @@ Hash[letters.zip(numbers)]
 #
 ### Ruby Project Structure
 * app/
-	* gems/                 `# External Libraries`
+	* gems/                 # External Libraries
 		* Gemfile
 		* Gemfile.lock
-  	* lib/					`# Program Files`
-	* tests/   				`# Test Files`
+  	* lib/					# Program Files
+	* tests/   				# Test Files
   	* README
-	* appname.rb            `# Driver` 
+	* appname.rb            # Driver 
 
 #
-### Reading From A File
+### Reading from a File
 Line-by-Line via open():
 ```ruby
 File.open("my/file/path", "r") do |f|
@@ -107,7 +113,7 @@ File.foreach('testfile') { |x| print x }
 ```
 
 #
-### Writing To A File
+### Writing to a File
 Generally:
 ```ruby
 File.open(yourfile, 'w') { |file| file.write("your text") }
