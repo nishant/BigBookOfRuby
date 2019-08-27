@@ -1,5 +1,8 @@
 # Ruby Code Snippets
 
+## Finder
+* [Character Counting Hash](#get-top-k-frequent-elements)
+
 ### Character Counting Hash
 ```ruby
 words = ['cat', 'skunk', 'ox', 'dog']
@@ -72,14 +75,51 @@ Hash[letters.zip(numbers)]
 #
 ### Ruby Project Structure
 * app/
-	* bin/                  # Files for command-line execution
-  	* lib/					# Program files
-    	* appname.rb
-    	* appname/          # Classes and so on
-  	* Rakefile              # Running tests
+	* gems/                 # External Libraries
+		* Gemfile
+		* Gemfile.lock
+  	* lib/					# Program Files
+	* tests/   				# Test Files
   	* README
-  	* test,spec,features/   # Whichever means of testing you go for
-	* appname.gemspec       # If it's a gem
+	* appname.rb            # Driver 
 
 #
+### Reading From A File
+Line-by-Line via open():
+```ruby
+File.open("my/file/path", "r") do |f|
+  f.each_line do |line|
+    puts line
+  end
+end
+```
+
+Entire File in Memory (if file not large):
+```ruby
+puts File.read(file_name)
+```
+
+Line-by-Line via IO or File:
+```ruby
+IO.foreach("testfile") { |x| print x }
+
+File.foreach('testfile') { |x| print x }
+```
+
+#
+### Writing To A File
+Generally:
+```ruby
+File.open(yourfile, 'w') { |file| file.write("your text") }
+```
+
+Short Version:
+```ruby
+File.write('/path/to/file', 'some content')
+```
+
+Append to an Existing File:
+```ruby
+File.write('/path/to/file', 'some content', mode: 'a')
+```
 
