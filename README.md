@@ -139,13 +139,7 @@ Dir.glob('lib/*.rb') { |f| require_relative f }
 ### Find Source Location of a Method
 Assuming class is declared in a file `test.rb`:
 ```ruby
-class Dog
-	def bark()
-		return "woof"
-    end
-end
 
-d = Dog.new
 
 puts d.method(:bark).source_location
 
