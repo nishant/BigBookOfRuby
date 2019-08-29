@@ -10,10 +10,10 @@
 * [Require Multiple Files in a Directory](#require-multiple-files-in-a-directory)
 
 ### Character Counting Hash
+
 ```ruby
 words = ['cat', 'skunk', 'ox', 'dog']
-
-words.each_with_object(Hash.new { |h,k| h[k] = [] }) { |w,h| h[w.size] << w }
+words.group_by(&:size)
 
 # Output: {3=>["cat", "dog"], 5=>["skunk"], 2=>["ox"]}
 ```
@@ -25,7 +25,7 @@ _Note: You need to use `require 'open-uri'` and `require 'json'`_
 Without query parameters / API key:
 ```ruby
 request = "https://db.ygoprodeck.com/api/v4/cardinfo.php"
-response = open(request).readlines.join
+response = open(request).readlines.join		# open(request, &:read) also works
 card_catalog = JSON.parse(response)
 ```
 
@@ -35,7 +35,7 @@ api_key = get_stock_api_key()
 keyword = "AAPL"
 
 request = "https://www.alphavantage.co/query?function=SYMBOL&keywords=#{keyword}&apikey=#{api_key}"
-response = open(request).readlines.join
+response = open(request).readlines.join		# open(request, &:read) also works
 search_data = JSON.parse(response)
 ```
 
@@ -62,7 +62,7 @@ top_k_frequent(nums, k)
 keys = ["a", "b", "c"]
 values = [1, 2, 3]
 
-Hash[keys.zip(values)]
+keys.zip(values).to_h
 
 # Output: {"a"=>1, "b"=>2, "c"=>3}
 ```
@@ -73,7 +73,7 @@ Hash[keys.zip(values)]
 letters = 'a'..'z'
 numbers = 1..26
 
-Hash[letters.zip(numbers)]
+letters.zip(numbers).to_h
 
 # Output: {"a"=>1, "b"=>2, "c"=>3, "d"=>4, "e"=>5, "f"=>6, "g"=>7, "h"=>8, "i"=>9, "j"=>10, "k"=>11, "l"=>12, "m"=>13, "n"=>14, "o"=>15, "p"=>16, "q"=>17, "r"=>18, "s"=>19, "t"=>20, "u"=>21,"v"=>22, "w"=>23, "x"=>24, "y"=>25, "z"=>26}
 ```
@@ -133,4 +133,23 @@ File.write('/path/to/file', 'some content', mode: 'a')
 ### Require Multiple Files in a Directory
 ```ruby
 Dir.glob('lib/*.rb') { |f| require_relative f }
+```
+
+#
+### Find Source Location of a Method
+Assuming class is declared in a file `test.rb`:
+```ruby
+class Dog
+	def bark()
+		return "woof"
+	end
+end
+
+d = Dog.new
+
+puts d.method(:bark).source_location
+
+# Output: 
+# test.rb
+# 2
 ```
