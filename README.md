@@ -46,9 +46,9 @@ nums = [1,1,1,2,2,3]
 k = 2
 
 def top_k_frequent(nums, k)
-    counts = Hash.new(0)
-    nums.each { |num| counts[num] += 1 }
-    counts.keys.sort { |a, b| counts[b] <=> counts[a] } [0...k]
+	counts = Hash.new(0)
+	nums.each { |num| counts[num] += 1 }
+	counts.keys.sort { |a, b| counts[b] <=> counts[a] } [0...k]
 end
 
 top_k_frequent(nums, k)
@@ -95,7 +95,7 @@ Line-by-Line via open():
 ```ruby
 File.open("my/file/path", "r") do |f|
   f.each_line do |line|
-    puts line
+	puts line
   end
 end
 ```
@@ -154,3 +154,4 @@ puts d.method(&:bark).source_location
 # 2
 ```
 #
+###
