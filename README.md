@@ -142,7 +142,7 @@ Assuming class is declared in a file `test.rb`:
 class Dog
 	def bark()
 		return "woof"
-	end
+    end
 end
 
 d = Dog.new
