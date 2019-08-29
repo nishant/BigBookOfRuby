@@ -46,9 +46,9 @@ nums = [1,1,1,2,2,3]
 k = 2
 
 def top_k_frequent(nums, k)
-	counts = Hash.new(0)
-	nums.each { |num| counts[num] += 1 }
-	counts.keys.sort { |a, b| counts[b] <=> counts[a] } [0...k]
+    counts = Hash.new(0)
+    nums.each { |num| counts[num] += 1 }
+    counts.keys.sort { |a, b| counts[b] <=> counts[a] } [0...k]
 end
 
 top_k_frequent(nums, k)
@@ -81,13 +81,13 @@ letters.zip(numbers).to_h
 #
 ### Ruby Project Structure
 * app/
-	* gems/                 # External Libraries
-		* Gemfile
-		* Gemfile.lock
-  	* lib/					# Program Files
-	* tests/   				# Test Files
-  	* README
-	* appname.rb            # Driver 
+    * gems/                 # External Libraries
+        * Gemfile
+        * Gemfile.lock
+      * lib/					# Program Files
+    * tests/   				# Test Files
+      * README
+    * appname.rb            # Driver 
 
 #
 ### Reading from a File
@@ -95,7 +95,7 @@ Line-by-Line via open():
 ```ruby
 File.open("my/file/path", "r") do |f|
   f.each_line do |line|
-	puts line
+    puts line
   end
 end
 ```
@@ -140,9 +140,9 @@ Dir.glob('lib/*.rb') { |f| require_relative f }
 Assuming class is declared in a file `test.rb`:
 ```ruby 
 class Dog
-	def bark()
-		return "woof"
-	end
+    def bark()
+        return "woof"
+    end
 end
 
 d = Dog.new
