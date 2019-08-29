@@ -147,7 +147,7 @@ end
 
 d = Dog.new
 
-puts d.method(:bark).source_locatio
+puts d.method(:bark).source_location
 
 # Output: 
 # test.rb
